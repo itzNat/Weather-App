@@ -44,16 +44,6 @@ This app uses the **AccuWeather API**:
    - Open `index.html` in a browser
    - No build step required!
 
-## Code Structure 📂
-
-```
-weather-app/
-├── index.html          # Main HTML file
-├── style.css           # Custom CSS animations
-├── main.js             # All JavaScript logic
-└── README.md
-```
-
 ## Optimizations ⚡
 
 - Animated weather icons (Fontawesome)
