@@ -1,7 +1,7 @@
 
     // AccuWeather API configuration, this is my personal API key, please replace it with your own if you want to copy the app.
     const accuWeatherAPI = {
-      key: 'pQYzwNPdBoA3QVeoAADQbnPjKoJyiR1X',
+      key: 'BndVC3WqYJZBkb7mpWswsOWQmUFRiUGX',
       baseUrl: 'https://dataservice.accuweather.com/',
     };
 
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
     modal.classList.add('hidden');
-  }, 7000);
+  }, 12000);
   
   closeBtn.addEventListener('click', () => {
     modal.classList.add('hidden');

@@ -37,7 +37,7 @@ This app uses the **AccuWeather API**:
    ```
 
 2. **Add your API key**
-   - Replace `pQYzwNPdBoA3QVeoA*****************` in `main.js` with your AccuWeather key
+   - Replace `pQYzwNPdBoA3QVeoA*****************` key in `main.js` with your AccuWeather key
 
 3. **Run the app**
    - Open `index.html` in a browser
