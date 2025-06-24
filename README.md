@@ -1,5 +1,4 @@
 
-```markdown
 # WeatherNow 🌦️
 
 A modern, animated weather dashboard built with AccuWeather API, featuring real-time forecasts, interactive search, and sleek UI animations.
