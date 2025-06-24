@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-animate">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <header class="flex flex-wrap text-center justify-around items-center mb-8 fade-in">
+      <div>
+        <h1 class="text-2xl font-bold">Weather<span class="text-indigo-400">Now</span></h1>
+        <p class="text-sm opacity-80" id="current-date">Loading date...</p>
+      </div>
+      <div class="relative">
+        <input type="text" 
+               placeholder="Search location..." 
+               class="search-input px-4 py-2 rounded-full text-white placeholder-gray-400 focus:outline-none"
+               id="location-input">
+        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Weather Display -->
+    <main>
+      <section class="weather-card p-6 mb-8 fade-in" style="animation-delay: 0.2s;">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-center md:text-left mb-6 md:mb-0">
+            <h2 class="text-2xl font-semibold" id="current-city">New York</h2>
+            <p class="text-gray-400 mb-4" id="current-condition">Loading...</p>
+            <div class="temp-display" id="current-temp">--°</div>
+          </div>
+          <div class="weather-icon pulse" id="current-icon">
+            <i class="fas fa-cloud-sun text-8xl text-yellow-300"></i>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+          <div class="bg-gray-800 bg-opacity-50 rounded-xl p-4 text-center">
+            <i class="fas fa-wind text-blue-400 mb-2"></i>
+            <p class="text-sm text-gray-400">Wind</p>
+            <p class="font-medium" id="wind-speed">-- km/h</p>
+          </div>
+          <div class="bg-gray-800 bg-opacity-50 rounded-xl p-4 text-center">
+            <i class="fas fa-tint text-blue-400 mb-2"></i>
+            <p class="text-sm text-gray-400">Humidity</p>
+            <p class="font-medium" id="humidity">--%</p>
+          </div>
+          <div class="bg-gray-800 bg-opacity-50 rounded-xl p-4 text-center">
+            <i class="fas fa-eye text-blue-400 mb-2"></i>
+            <p class="text-sm text-gray-400">Visibility</p>
+            <p class="font-medium" id="visibility">-- km</p>
+          </div>
+          <div class="bg-gray-800 bg-opacity-50 rounded-xl p-4 text-center">
+            <i class="fas fa-temperature-high text-blue-400 mb-2"></i>
+            <p class="text-sm text-gray-400">Feels Like</p>
+            <p class="font-medium" id="feels-like">--°</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hourly Forecast -->
+      <section class="weather-card p-6 mb-8 fade-in" style="animation-delay: 0.4s;">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-semibold">Hourly Forecast</h3>
+          <div class="flex space-x-2">
+            <button class="tab-button active text-sm px-3 py-1 rounded-full">Today</button>>
+          </div>
+        </div>
+        <div class="hourly-forecast flex overflow-x-auto pb-2 justify-evenly space-x-4">
+          
+          <div class="flex-shrink-0 text-center">
+            <p class="text-sm">Loading...</p>
+            <i class="fas fa-spinner text-3xl my-2 text-indigo-400 animate-spin"></i>
+            <p class="font-medium">--°</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Daily Forecast -->
+      <section class="weather-card p-6 fade-in" style="animation-delay: 0.6s;">
+        <h3 class="text-xl font-semibold mb-6">5-Day Forecast</h3>
+        <div class="space-y-4" id="daily-forecast-container">
+          <div class="flex justify-between items-center p-3 hover:bg-gray-800 hover:bg-opacity-30 rounded-lg transition">
+            <div class="flex items-center space-x-4">
+              <p class="w-24">Loading...</p>
+              <i class="fas fa-spinner text-2xl text-indigo-400 w-8 animate-spin"></i>
+            </div>
+            <div class="flex space-x-6">
+              <span class="font-medium">--°</span>
+              <span class="text-gray-400">--°</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-sm text-gray-500 fade-in" style="animation-delay: 0.8s;">
+      <p>© 2025 WeatherApp. All rights reserved. Data provided by <a href="https://developer.accuweather.com/" class="text-indigo-400 hover:underline">AccuWeather</a></p>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
