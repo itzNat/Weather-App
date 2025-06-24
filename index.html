@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body class="bg-gradient-animate">
+  <!-- Page Loader -->
+  <div id="page-loader" class="fixed inset-0 bg-gray-900 flex flex-col items-center justify-center z-50">
+    <div class="flex space-x-2 mb-8">
+      <i class="fas fa-sun text-5xl text-yellow-400 animate-pulse"></i>
+      <i class="fas fa-cloud text-5xl text-blue-400 animate-bounce"></i>
+      <i class="fas fa-rainy text-5xl text-indigo-400 animate-pulse"></i>
+    </div>
+    <p class="text-gray-400 mb-4">Loading WeatherNow...</p>
+    <div class="w-64 h-1 bg-gray-700 rounded-full overflow-hidden">
+      <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 animate-progress"></div>
+    </div>
+  </div>
   <div class="container mx-auto px-4 py-8 max-w-4xl">
     <header class="flex flex-wrap text-center justify-around items-center mb-8 fade-in">
       <div>
@@ -16,10 +31,9 @@
         <p class="text-sm opacity-80" id="current-date">Loading date...</p>
       </div>
       <div class="relative">
-        <input type="text" 
-               placeholder="Search location..." 
-               class="search-input px-4 py-2 rounded-full text-white placeholder-gray-400 focus:outline-none"
-               id="location-input">
+        <input type="text" placeholder="Search location..."
+          class="search-input px-4 py-2 rounded-full text-white placeholder-gray-400 focus:outline-none"
+          id="location-input">
         <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white">
           <i class="fas fa-search"></i>
         </button>
@@ -72,7 +86,7 @@
           </div>
         </div>
         <div class="hourly-forecast flex overflow-x-auto pb-2 justify-evenly space-x-4">
-          
+
           <div class="flex-shrink-0 text-center">
             <p class="text-sm">Loading...</p>
             <i class="fas fa-spinner text-3xl my-2 text-indigo-400 animate-spin"></i>
@@ -85,7 +99,8 @@
       <section class="weather-card p-6 fade-in" style="animation-delay: 0.6s;">
         <h3 class="text-xl font-semibold mb-6">5-Day Forecast</h3>
         <div class="space-y-4" id="daily-forecast-container">
-          <div class="flex justify-between items-center p-3 hover:bg-gray-800 hover:bg-opacity-30 rounded-lg transition">
+          <div
+            class="flex justify-between items-center p-3 hover:bg-gray-800 hover:bg-opacity-30 rounded-lg transition">
             <div class="flex items-center space-x-4">
               <p class="w-24">Loading...</p>
               <i class="fas fa-spinner text-2xl text-indigo-400 w-8 animate-spin"></i>
@@ -101,10 +116,30 @@
 
     <!-- Footer -->
     <footer class="mt-12 text-center text-sm text-gray-500 fade-in" style="animation-delay: 0.8s;">
-      <p>© 2025 WeatherApp. All rights reserved. Data provided by <a href="https://developer.accuweather.com/" class="text-indigo-400 hover:underline">AccuWeather</a></p>
+      <p>© 2025 WeatherApp. All rights reserved. Data provided by <a href="https://developer.accuweather.com/"
+          class="text-indigo-400 hover:underline">AccuWeather</a></p>
     </footer>
   </div>
 
+  <!-- API Limit Warning Modal -->
+  <div id="api-warning-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-30 hidden">
+    <div class="bg-gray-800 rounded-xl p-6 max-w-md mx-4 border border-indigo-400">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold text-indigo-400">⚠️ API Limit Notice</h3>
+        <button id="close-modal" class="text-gray-400 hover:text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <p class="text-gray-300 mb-4">
+        This app uses a free-tier weather API with <span class="font-bold">strict limits</span> (50 calls/day).
+        Please avoid excessive searching to prevent service interruptions.
+      </p>
+      <div class="h-1 w-full bg-gray-700 rounded-full overflow-hidden">
+        <div id="countdown-bar" class="h-full bg-indigo-500"></div>
+      </div>
+    </div>
+  </div>
   <script src="main.js"></script>
 </body>
+
 </html>

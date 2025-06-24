@@ -245,3 +245,27 @@
 
     setInterval(updateDate, 60000);
   
+
+    // Show modal on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('api-warning-modal');
+  const closeBtn = document.getElementById('close-modal');
+  const countdownBar = document.getElementById('countdown-bar');
+
+  modal.classList.remove('hidden');
+
+  setTimeout(() => {
+    modal.classList.add('hidden');
+  }, 7000);
+  
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+  
+  // Loader
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('page-loader').classList.add('hidden');
+    }, 5000);
+  });
+});
