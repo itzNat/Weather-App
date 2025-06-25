@@ -1,7 +1,7 @@
 
     // AccuWeather API configuration, this is my personal API key, please replace it with your own if you want to copy the app.
     const accuWeatherAPI = {
-      key: 'WmDfM5U878sYMJCwlFwaVSFsP44qE8ki',
+      key: 'O9cPbuVzJOTx5gAWmDQigsRvBZkEGFnS',
       baseUrl: 'https://dataservice.accuweather.com/',
     };
 
